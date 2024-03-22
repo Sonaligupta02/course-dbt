@@ -1,7 +1,6 @@
 # Welcome to dbt project 1!
 
-## All SQL Queries
-# Query: How many users do we have?
+# Question: How many users do we have?
 ```sql
 
 SELECT COUNT(user_guid) as num_of_users
