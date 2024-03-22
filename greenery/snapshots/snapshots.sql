@@ -1,7 +1,9 @@
+{% snapshot product_snapshot %}
+
 {{
   config(
-    target_database = 'dev_db',
-    target_schema = dbt_sonali_gupta,
+    target_database =  target.database,
+    target_schema =  target.schema,
     strategy='check',
     unique_key='product_id',
     check_cols=['inventory'],
@@ -9,4 +11,6 @@
 }} 
 
 select * from 
-{{source('postgres', 'products')}}
+{{source ('postgres', 'products')}}
+
+{% endsnapshot %}
