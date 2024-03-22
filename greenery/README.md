@@ -13,7 +13,7 @@ COUNT(*) as num_of_orders
 FROM dev_db.dbt_sonali_gupta.stg_postgres__orders
 GROUP BY 1 ) 
 SELECT avg(num_of_orders) as avg_orders_receive
-FROM avg_orders;
+FROM avg_orders ```
 
 
 -- On average, how long does an order take from being placed to being delivered?
