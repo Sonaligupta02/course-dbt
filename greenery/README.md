@@ -23,6 +23,7 @@ WHERE status = 'delivered'
 
 -- How many users have only made one purchase? Two purchases? Three+ purchases?
 
+```sql
 WITH count_users as (
 SELECT o.user_id as user, count(o.order_id) as num_purchase
 FROM dev_db.dbt_sonali_gupta.stg_postgres__orders o 
