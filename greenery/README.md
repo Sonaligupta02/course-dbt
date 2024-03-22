@@ -1,13 +1,13 @@
 # Welcome to dbt project 1!
 
 ## All SQL Queries
-
+# Query: How many users do we have?
 ```sql
--- Query: How many users do we have?
-SELECT COUNT(user_guid) as num_of_users
-FROM dev_db.dbt_sonali_gupta.stg_postgres__users;
 
--- Query: On average, how many orders do we receive per hour?
+SELECT COUNT(user_guid) as num_of_users
+FROM dev_db.dbt_sonali_gupta.stg_postgres__users ```
+
+#Query: On average, how many orders do we receive per hour?
 WITH avg_orders AS (
     SELECT DATE_TRUNC('hour', created_at) as hour,
            COUNT(*) as num_of_orders
