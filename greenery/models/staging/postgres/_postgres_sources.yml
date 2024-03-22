@@ -1,0 +1,26 @@
+version: 2
+
+sources: 
+  - name: postgres
+    database: raw
+    schema: public
+
+    tables:
+     - name: users
+       description: This table contains the information of users.
+     - name: addresses
+       description: This table conatins the address of users  
+     - name: orders
+       description: This table  contains the informations about orders.
+     - name: events
+       description: This table contains the event tracking.
+     - name: products
+       description: This table contains the product infoamtions.
+     - name: order_items
+       description: This table conatins the order item from orders.
+     - name: promos
+       description: This table conatins the promos( discount, items) from the order table.
+     
+     
+
+
