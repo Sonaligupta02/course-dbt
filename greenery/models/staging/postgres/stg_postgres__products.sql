@@ -5,6 +5,7 @@
 }}
 
 SELECT
+product_id
 NAME , 
 PRICE, 
 INVENTORY 

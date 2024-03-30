@@ -1,17 +1,42 @@
 version: 2
 
 models:
-     - name: stg_postgres_users
-       description: This table contains the information of stagimg users.
-     - name: stg_postgres__addresses
-       description: This table conatins the staging address  
-     - name: stg_postgres__orders
-       description: This table  contains the informations about staging orders.
-     - name: stg_postgres__events
-       description: This table contains the staging event tracking.
-     - name: stg_postgre__products
-       description: This table contains the staging product infoamtions.
-     - name: stg_postgre__order_items
-       description: This table conatins the  staging order item from orders.
-     - name: stg_postgre__promos
-       description: This table conatins the staging promos (discount, items) from the order table.
+  - name: stg_postgres__users
+    description: This table contains the information of staging users.
+
+  - name: stg_postgres__addresses
+    description: This table contains the staging address.
+    columns:
+      - name: ADDRESS_ID
+        description: address id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_postgres__orders
+    description: This table contains the information about staging orders.
+
+  - name: stg_postgres__events
+    description: This table contains the staging event tracking.
+    columns:
+      - name: EVENT_ID
+        tests: 
+          - not_null
+          - unique 
+      - name: event_type
+        tests: 
+          - accepted_values: 
+              values: 
+                - checkout
+                - package_shipped
+                - add_to_cart
+                - page_view 
+
+  - name: stg_postgres__products
+    description: This table contains the staging product information.
+
+  - name: stg_postgres__order_items
+    description: This table contains the staging order item from orders.
+
+  - name: stg_postgres__promos
+    description: This table contains the staging promos (discount, items) from the order table.
