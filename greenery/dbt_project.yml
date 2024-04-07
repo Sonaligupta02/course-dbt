@@ -39,3 +39,6 @@ models:
       marts:
         product:
          +schema: product
+
+    +post-hook:
+      - "{{ grant(role='reporting') }}"

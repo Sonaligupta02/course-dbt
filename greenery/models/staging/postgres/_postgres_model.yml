@@ -15,6 +15,12 @@ models:
 
   - name: stg_postgres__orders
     description: This table contains the information about staging orders.
+    columns:
+     - name: order_total
+       tests:
+        - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1000
 
   - name: stg_postgres__events
     description: This table contains the staging event tracking.
