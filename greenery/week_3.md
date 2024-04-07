@@ -1,32 +1,12 @@
-## part 1 
-- conversion rate
+## Part 1 
+### conversion rate
+#### Ans: 62.4567
 ``` sql
 select 
 count(distinct case when checkout = 1 then session_id end) / count( distinct session_id) * 100 as conversion_rate
 from {{ref ('fact_page_views')}}
  ```
-#### Ans: CONVERSION_RATE = 62.4567
-- conversion rate by product
-``` sql  
-  {{ 
-    config(
-        materialized='table',
-        alias='product_conversion_rate'
-    )
-}}
-
-with page_views as (
-    select * from {{ ref('fact_page_views') }}
-)
-
-select 
-    product_id,
-    count(distinct case when checkout = 1 then session_id end) / count(distinct session_id) * 100 as conversion_rate
-from 
-    page_views
-group by 
-    1
-   ```
+#### conversion rate by product
 #### Ans: CONVERSION_RATE BY PRODUCT
 * String of pearls	60.937500
 * Arrow Head	55.555600
@@ -58,6 +38,28 @@ group by
 * Snake Plant	39.726000
 * Angel Wings Begonia	39.344300
 * Pothos	34.426200
+
+
+``` sql  
+  {{ 
+    config(
+        materialized='table',
+        alias='product_conversion_rate'
+    )
+}}
+
+with page_views as (
+    select * from {{ ref('fact_page_views') }}
+)
+
+select 
+    product_id,
+    count(distinct case when checkout = 1 then session_id end) / count(distinct session_id) * 100 as conversion_rate
+from 
+    page_views
+group by 
+    1
+   ```
 
 
 ## Part 2: 
