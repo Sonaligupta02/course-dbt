@@ -1,0 +1,20 @@
+version: 2
+
+sources: 
+  - name: postgres
+    database: dev_db
+    schema: dbt_sonali_gupta
+
+    tables:
+     - name: transacti
+       description: This table contains the information of users transaction.
+     - name: line_item
+       description: describing line item details, for instance total_price, quantity, name fields could be present in here. 
+     - name: exchange_rates 
+       description: which rate currency will be bought
+     - name: bank 
+       description: CSV export of partner bank report. 
+       
+  
+     
+     
