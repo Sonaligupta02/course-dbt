@@ -24,8 +24,8 @@
 
 ## Part 2
 
-- Which days have mismatches of data.
+#### Which days have mismatches of data.
 - if stakeholder looking this reports, we need to give a view access of transactions_distribution table in snowflake.
-
 - 
-- Potential transactions which might be missing from bank account export.
+
+##### Potential transactions which might be missing from bank account export.
