@@ -1,15 +1,31 @@
-Welcome to your new dbt project!
+## Finmid Test 
 
-### Using the starter project
+#### Tools:
+ - Snowflake
+ - DBT for pipeline
+   
+#### Process:
+- step 1: First save all the data in excel format in local.
+- step 2: Import all the data in snowflake.
+- step 3: Create a staging models in dbt for all the raws data.
+- step 4: Start creating a code for all part1 and part2.
+- step 5: All output avaible as a views in snowflake
+  
+## Part 1
+#### Revenue per month per client - Report how much revenue in EUR earned for each client every month.
+- if stakeholder looking this reports, we need to give a view access of client_revenue table in snowflake.
+- for query/code open client_revenue.sql in dbt
+- for output run a table client_revenue
 
-Try running the following commands:
-- dbt run
-- dbt test
+#### Transaction distribution - Analyse the basket size of transactions to give insights on amounts spent by customer over time.
+- if stakeholder looking this reports, we need to give a view access of transactions_distribution table in snowflake.
+- for query/code open client_revenue.sql in dbt
+- for output run a table client_revenue
 
+## Part 2
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Which days have mismatches of data.
+- if stakeholder looking this reports, we need to give a view access of transactions_distribution table in snowflake.
+
+- 
+- Potential transactions which might be missing from bank account export.
